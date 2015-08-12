@@ -1,11 +1,10 @@
-URxvt*geometry: 80x30
-URxvt*scrollBar: false
+URxvt.depth: 32
 
 URxvt.font:     xft:bitstream vera sans mono:size=16:antialias=true
 URxvt.boldFont: xft:bitstream vera sans mono:bold:size=16:antialias=true
 
-URxvt*.transparent: true
-URxvt*.shading: 110
+! Disable scroll bar
+URxvt.scrollBar: false
 
 urxvt*foreground: white
 urxvt*background: black
@@ -26,3 +25,6 @@ urxvt*background: black
 *color13: #AD7FA8
 *color14: #fcaf3e
 *color15: #EEEEEC
+
+urxvt*transparent: true
+urxvt*shading: 15
