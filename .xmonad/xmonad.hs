@@ -11,7 +11,7 @@ import System.IO
 import Data.List
 
 main = do
-    spawn xrandr
+    setupMonitors
     xmproc <- spawnPipe "xmobar"
     xmonad $ desktopConfig
         { terminal    = "urxvt"
@@ -25,19 +25,20 @@ main = do
             , ppLayout = const ""
             } 
         , normalBorderColor  = "#000000" -- black
-        , focusedBorderColor = "#ff3f3f" -- reddish
+        , focusedBorderColor = "#E0E0E0" -- grey
         } `additionalKeys` myKeyBindings
 
 myKeyBindings = 
-    [ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock"),
-      ((0, 0x1008FF11), spawn "amixer set Master 2-"),
-      ((0, 0x1008FF13), spawn "amixer set Master 2+"),
-      ((0, 0x1008FF12), spawn "amixer set Master toggle")
+    [ ((mod4Mask .|. shiftMask, xK_f), spawn "google-chrome")
+    , ((mod4Mask .|. shiftMask, xK_g), spawn "sh /opt/idea/bin/idea.sh")
+    , ((0, 0x1008FF11), spawn "amixer set Master 2-")
+    , ((0, 0x1008FF13), spawn "amixer set Master 2+")
+    , ((0, 0x1008FF12), spawn "amixer set Master toggle")
     ]
 
 -- Setup physical monitors
-xrandr =
-    concat $ intersperse " "
+setupMonitors =
+    spawn $ concat $ intersperse " "
         [ "xrandr"
         , "--output HDMI1"
         , "--mode 1920x1080"
