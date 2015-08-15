@@ -1,7 +1,9 @@
-URxvt.depth: 32
+! URxvt.depth: 32
 
 URxvt.font:     xft:bitstream vera sans mono:size=16:antialias=true
 URxvt.boldFont: xft:bitstream vera sans mono:bold:size=16:antialias=true
+
+URxvt*draw_borders: true
 
 ! Disable scroll bar
 URxvt.scrollBar: false
@@ -28,3 +30,11 @@ urxvt*background: black
 
 urxvt*transparent: true
 urxvt*shading: 15
+
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher:  firefox
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+URxvt.clipboard.autocopy:   true
