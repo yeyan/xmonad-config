@@ -10,7 +10,7 @@ Config {
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
-   , template = "%StdinReader% | %battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% }{ %RJTT% | %date% || %kbd% "
+   , template = "%StdinReader% | %battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% }{ %YPAD% | %date% || %kbd% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -37,7 +37,7 @@ Config {
    , commands = 
 
         -- weather monitor
-        [ Run Weather "RJTT" [ "--template", "<skyCondition> | <fc=#4682B4><tempC></fc>°C | <fc=#4682B4><rh></fc>% | <fc=#4682B4><pressure></fc>hPa"
+        [ Run Weather "YPAD" [ "--template", "<skyCondition> | <fc=#4682B4><tempC></fc>°C | <fc=#4682B4><rh></fc>% | <fc=#4682B4><pressure></fc>hPa"
                              ] 36000
 
         -- network activity monitor (dynamic interface resolution)
@@ -106,21 +106,3 @@ Config {
         , Run StdinReader
         ]
    }
-
---Config { font = "-misc-fixed-*-*-*-*-15-*-*-*-*-*-*-*"
---       , bgColor = "black"
---       , fgColor = "grey"
---       , position = Top
---       , commands = 
---            [ Run Weather "YPAD" ["-t", "<station>: <tempC>C"] 36000
---            , Run Network "wlan0" ["-L","0","-H","32","--normal","green","--high","red"] 10
---            , Run Cpu ["-L","15","-H","50","--normal","green","--high","red"] 10
---            , Run Memory ["-t","Mem: %"] 10
---            , Run Swap [] 10
---            , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
---            , Run StdinReader
---            ]
---       , sepChar = "%"
---       , alignSep = "}{"
---       , template = "%StdinReader% | %cpu% | %memory% * %swap% | %wlan0% }{ %YPAD% | %date%"
---       }
