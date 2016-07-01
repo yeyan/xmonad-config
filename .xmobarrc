@@ -1,7 +1,8 @@
 Config { 
 
    -- appearance
-     font =         "xft:Bitstream Vera Sans Mono:size=12:bold:antialias=true"
+   --  font =         "xft:Bitstream Vera Sans Mono:size=12:bold:antialias=true"
+     font =         "xft:Terminus:pixelsize=18,WenQuanYi Zen Hei Sharp:pixelsize=18"
    , bgColor =      "black"
    , fgColor =      "#646464"
    , position =     Top
@@ -13,7 +14,7 @@ Config {
    , alignSep = "}{"  -- separator between left-right alignment
 
    -- template for status bar
-   , template = "%StdinReader% | %multicpu% | %memory% | %dynnetwork% }{ %YPAD% | %date% || %kbd% "
+   , template = "%StdinReader% | %multicpu% | %memory% | %dynnetwork% }{ %YMML% | %date% || %kbd% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -40,7 +41,7 @@ Config {
    , commands = 
 
         -- weather monitor
-        [ Run Weather "YPAD" [ "--template", "<skyCondition> | <fc=#4682B4><tempC></fc>°C | <fc=#4682B4><rh></fc>% | <fc=#4682B4><pressure></fc>hPa"
+        [ Run Weather "YMML" [ "--template", "<skyCondition> | <fc=#4682B4><tempC></fc>°C | <fc=#4682B4><rh></fc>% | <fc=#4682B4><pressure></fc>hPa"
                              ] 36000
 
         -- network activity monitor (dynamic interface resolution)
