@@ -71,7 +71,6 @@ myKeyBindings =
     [ ((myModMask .|. shiftMask, xK_f), spawn "chromium-browser")
     , ((myModMask .|. shiftMask, xK_g), spawn "_JAVA_AWT_WM_NONREPARENTING=1 /opt/idea/bin/idea.sh")
     , ((myModMask .|. shiftMask, xK_l), spawn myScreensaver)
-    , ((myModMask .|. shiftMask, xK_x), withFocused test)
     --, ((myModMask, ), toggleMute >>= muteAlert)
     , ((myModMask, xK_F11), lowerVolume 2 >>= volumeAlert)
     , ((myModMask, xK_F12), raiseVolume 2 >>= volumeAlert)
